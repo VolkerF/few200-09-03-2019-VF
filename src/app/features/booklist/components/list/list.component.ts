@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { WatchlistListItem } from '../../models';
+import { BooklistListItem } from '../../models';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { WatchlistState, selectWhatListItems } from '../../reducers';
+import { BooklistState as ListState, selectWhatListItems } from '../../reducers';
 
 @Component({
   selector: 'app-list',
@@ -13,12 +13,14 @@ import { WatchlistState, selectWhatListItems } from '../../reducers';
 export class ListComponent implements OnInit {
 
   @Input()
-  items: WatchlistListItem[];
+  items: BooklistListItem[];
 
-  constructor(private store: Store<WatchlistState>) { }
+  constructor(private store: Store<ListState>) { }
+
 
   ngOnInit() {
 
   }
 
 }
+

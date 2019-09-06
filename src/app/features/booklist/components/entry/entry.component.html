@@ -1,0 +1,31 @@
+<div class="form-group">
+  <br>
+  <h5>Add a book to your list</h5>
+
+  <label for="newBook">Add Book Title: </label>
+  <input name="newBook"
+         class="form-control"
+         #newBook>
+
+  <label for="newBook">Add Author Name: </label>
+  <input name="newBook"
+         class="form-control"
+         #newBookAuthor>
+
+
+  <label for="newBook">Select media format: </label>
+
+  <select class="form-control"
+          name="formats"
+          #formats>
+    <option value="Hardcover">Hardcover</option>
+    <option value="Paperback">Paperback</option>
+    <option value="E-Book">E-Book</option>
+  </select>
+
+
+  <input type='button'
+         (click)="add(newBook, newBookAuthor, formats)"
+         class="btn btn-primary"
+         value="Add">
+</div>
