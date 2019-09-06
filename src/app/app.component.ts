@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from './reducers';
+import { dispatch } from 'rxjs/internal/observable/pairs';
+import { applicationStarted } from './actions/app.actions';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'few200';
+
+  constructor(store: Store<AppState>) {
+    store.dispatch(applicationStarted());
+  }
 }
